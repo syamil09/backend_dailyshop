@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Request\ProductGalleryRequests;
+use App\Models\ProductGallery;
+use App\Models\Product;
 
 class ProductGalleryController extends Controller
 {
@@ -13,7 +16,9 @@ class ProductGalleryController extends Controller
      */
     public function index()
     {
-        //
+        $items = ProductGallery::with('product')->get();
+
+        return view('pages.product_galleries.index',compact('items'));
     }
 
     /**
@@ -23,7 +28,9 @@ class ProductGalleryController extends Controller
      */
     public function create()
     {
-        //
+        $products = Product::all();
+
+        return view('pages.product_galleries.create', compact('products'));
     }
 
     /**

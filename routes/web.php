@@ -17,6 +17,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/', 'DashboardController@index');
 
 	Route::resource('products', 'ProductController');
+	Route::resource('product-galleries', 'ProductGalleryController');
 });
 
 
