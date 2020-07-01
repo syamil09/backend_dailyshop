@@ -19,6 +19,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('products', 'ProductController');
 	Route::get('products/{id}/gallery', 'ProductController@gallery')->name('products.gallery');
 	Route::resource('product-galleries', 'ProductGalleryController');
+	Route::resource('transactions', 'TransactionController');
 });
 
 
