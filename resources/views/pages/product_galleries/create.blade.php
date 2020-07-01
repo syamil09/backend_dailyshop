@@ -35,7 +35,7 @@
 						<input type="radio" 
 						   	   name="is_default" 
 						   	   value="1" 
-						       class="@error('is_default') is-invalid @enderror"> Ya
+						       class="@error('is_default') is-invalid @enderror" > Ya
 						
 					</label>
 					&nbsp
@@ -43,7 +43,7 @@
 						<input type="radio" 
 						   	   name="is_default" 
 						   	   value="0" 
-						       class="@error('is_default') is-invalid @enderror"> Tidak
+						       class="@error('is_default') is-invalid @enderror" > Tidak
 					</label>
 
 					@error('is_default') <small class="text-danger">{{ $message }}</small> @enderror
