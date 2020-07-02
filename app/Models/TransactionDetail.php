@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class \TransactionDetail extends Model
+class TransactionDetail extends Model
 {
     use SoftDeletes;
 
@@ -20,5 +20,5 @@ class \TransactionDetail extends Model
     {
     	return $this->belongsTo(Product::class, 'product_id', 'id');
     }
-}
+
 }
