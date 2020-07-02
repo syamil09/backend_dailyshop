@@ -60,7 +60,9 @@
 											    class="btn btn-info btn-sm">
 												<i class="fa fa-eye"></i>
 											</a>
-											
+											<a href="{{ route('transactions.edit', $item->id) }}" class="btn btn-primary btn-sm">
+					                            <i class="fa fa-pencil"></i>
+					                        </a>
 											<form action="{{ route('transactions.destroy', $item->id) }}" method="POST" class="d-inline">
 												@csrf
 												@method('delete')
