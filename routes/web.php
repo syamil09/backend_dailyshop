@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('products/{id}/gallery', 'ProductController@gallery')->name('products.gallery');
 	Route::resource('product-galleries', 'ProductGalleryController');
 	Route::resource('transactions', 'TransactionController');
-	Route::get('transactions/status/{id}', 'TransactionController@index')->name('transactions.status');
+	Route::get('transactions/{id}/set-status', 'TransactionController@setStatus')->name('transactions.status');
 });
 
 

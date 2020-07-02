@@ -34,7 +34,7 @@
 											@if ($item->transactions_status == 'PENDING')
 												<span class="badge badge-info">
 											@elseif($item->transactions_status == 'SUCCESS')
-												<span class="badge badge-succes">
+												<span class="badge badge-success">
 											@elseif($item->transactions_status == 'FAILED')
 												<span class="badge badge-danger">
 											@else
