@@ -31,7 +31,7 @@
         }
         #flotPie1 table {
             top: 20px!important;
-            right: -10px!important;
+            right: 0px!important;
         }
         .chart-container {
             display: table;
