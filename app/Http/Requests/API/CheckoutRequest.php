@@ -3,6 +3,7 @@
 namespace App\Http\Requests\API;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Validator;
 
 class CheckoutRequest extends FormRequest
 {
@@ -21,6 +22,12 @@ class CheckoutRequest extends FormRequest
      *
      * @return array
      */
+    public $validator = null;
+    protected function failedValidation(Validator $validator)
+    {
+        $this->validator = $validator;
+    }
+
     public function rules()
     {
         return [
@@ -34,4 +41,6 @@ class CheckoutRequest extends FormRequest
             'transaction_details.*' => 'integer|exists:products,id',
         ];
     }
+
+
 }

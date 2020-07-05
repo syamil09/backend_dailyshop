@@ -13,11 +13,15 @@ class CheckoutController extends Controller
 {
     public function checkout(CheckoutRequest $request)
     {
+    	if ($request->validator->fails()) {
+	        return ResponseFormatter::error(null,$request->validator->messages());
+	    }
+
     	$data = $request->except('transaction_details');
     	$data['uuid'] = 'TRX' . mt_rand(10000,99999) . mt_rand(100,999);
 
     	$transaction = Transaction::create($data);
-    	// dd($request->all());
+ 
     	foreach ($request->transaction_details as $product) {
 
     		$details[] = new TransactionDetail([
@@ -29,7 +33,7 @@ class CheckoutController extends Controller
     	}
 
     	$transaction->details()->saveMany($details);
-    
+
     	return ResponseFormatter::success($transaction);
     }
 }
