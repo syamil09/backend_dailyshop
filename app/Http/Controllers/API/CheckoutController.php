@@ -25,7 +25,6 @@ class CheckoutController extends Controller
     	foreach ($request->transaction_details as $product) {
 
     		$details[] = new TransactionDetail([
-    			'transaction_id' => $transaction->id,
     			'product_id' => $product
     		]);
 

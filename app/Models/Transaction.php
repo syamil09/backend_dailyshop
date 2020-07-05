@@ -15,4 +15,9 @@ class Transaction extends Model
     {
     	return $this->hasMany(TransactionDetail::class, 'transaction_id');
     }
+
+    public function setTransactionsStatusAttribute($value)
+    {
+        $this->attributes['transactions_status'] = $value ?: 'PENDING';
+    }
 }
